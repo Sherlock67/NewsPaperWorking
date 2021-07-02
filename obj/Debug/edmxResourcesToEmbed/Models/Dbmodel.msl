@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="basicModelStoreContainer" CdmEntityContainer="basicEntities">
+    <EntitySetMapping Name="categories">
+      <EntityTypeMapping TypeName="basicModel.category">
+        <MappingFragment StoreEntitySet="category">
+          <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+          <ScalarProperty Name="categoryname" ColumnName="categoryname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contact_info">
+      <EntityTypeMapping TypeName="basicModel.contact_info">
+        <MappingFragment StoreEntitySet="contact_info">
+          <ScalarProperty Name="website_link" ColumnName="website_link" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phn_two" ColumnName="phn_two" />
+          <ScalarProperty Name="phn_one" ColumnName="phn_one" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Email_setting">
+      <EntityTypeMapping TypeName="basicModel.Email_setting">
+        <MappingFragment StoreEntitySet="Email_setting">
+          <ScalarProperty Name="smtp_charset" ColumnName="smtp_charset" />
+          <ScalarProperty Name="smtp_mailtype" ColumnName="smtp_mailtype" />
+          <ScalarProperty Name="smtp_pass" ColumnName="smtp_pass" />
+          <ScalarProperty Name="smtp_username" ColumnName="smtp_username" />
+          <ScalarProperty Name="smtp_port" ColumnName="smtp_port" />
+          <ScalarProperty Name="smtp_host" ColumnName="smtp_host" />
+          <ScalarProperty Name="smtp_protocol" ColumnName="smtp_protocol" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="app_setting">
+      <EntityTypeMapping TypeName="basicModel.app_setting">
+        <MappingFragment StoreEntitySet="app_setting">
+          <ScalarProperty Name="copyright" ColumnName="copyright" />
+          <ScalarProperty Name="webfooter" ColumnName="webfooter" />
+          <ScalarProperty Name="mblmenupath" ColumnName="mblmenupath" />
+          <ScalarProperty Name="applogopath" ColumnName="applogopath" />
+          <ScalarProperty Name="faviconpath" ColumnName="faviconpath" />
+          <ScalarProperty Name="footerlogopath" ColumnName="footerlogopath" />
+          <ScalarProperty Name="websitelogopath" ColumnName="websitelogopath" />
+          <ScalarProperty Name="websitetitle" ColumnName="websitetitle" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_news">
+      <EntityTypeMapping TypeName="basicModel.tbl_news">
+        <MappingFragment StoreEntitySet="tbl_news">
+          <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+          <ScalarProperty Name="Alttext" ColumnName="Alttext" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="ImageTitle" ColumnName="ImageTitle" />
+          <ScalarProperty Name="desc" ColumnName="desc" />
+          <ScalarProperty Name="headline" ColumnName="headline" />
+          <ScalarProperty Name="short_headline" ColumnName="short_headline" />
+          <ScalarProperty Name="nid" ColumnName="nid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

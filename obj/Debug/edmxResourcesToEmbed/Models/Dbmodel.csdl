@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="basicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="categoryid" />
+    </Key>
+    <Property Name="categoryid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categoryname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="basicEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="categories" EntityType="Self.category" />
+    <EntitySet Name="contact_info" EntityType="basicModel.contact_info" />
+    <EntitySet Name="Email_setting" EntityType="basicModel.Email_setting" />
+    <EntitySet Name="app_setting" EntityType="basicModel.app_setting" />
+    <EntitySet Name="tbl_news" EntityType="basicModel.tbl_news" />
+  </EntityContainer>
+  <EntityType Name="contact_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="phn_one" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="phn_two" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="website_link" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Email_setting">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="smtp_protocol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="smtp_host" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="smtp_port" Type="Int32" />
+    <Property Name="smtp_username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="smtp_pass" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="smtp_mailtype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="smtp_charset" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="app_setting">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="websitetitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="websitelogopath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="footerlogopath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="faviconpath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="applogopath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="mblmenupath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="webfooter" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="copyright" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_news">
+    <Key>
+      <PropertyRef Name="nid" />
+    </Key>
+    <Property Name="nid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="short_headline" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="headline" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ImageTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Alttext" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="categoryid" Type="Int32" />
+  </EntityType>
+</Schema>

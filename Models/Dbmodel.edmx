@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="basicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="app_setting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="websitetitle" Type="varchar" MaxLength="50" />
+          <Property Name="websitelogopath" Type="varchar(max)" />
+          <Property Name="footerlogopath" Type="varchar(max)" />
+          <Property Name="faviconpath" Type="varchar(max)" />
+          <Property Name="applogopath" Type="varchar(max)" />
+          <Property Name="mblmenupath" Type="varchar(max)" />
+          <Property Name="webfooter" Type="varchar(max)" />
+          <Property Name="copyright" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="categoryid" />
+          </Key>
+          <Property Name="categoryid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="categoryname" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="contact_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Content" Type="varchar(max)" />
+          <Property Name="address" Type="varchar(max)" />
+          <Property Name="phn_one" Type="varchar" MaxLength="20" />
+          <Property Name="phn_two" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="website_link" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Email_setting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="smtp_protocol" Type="varchar" MaxLength="50" />
+          <Property Name="smtp_host" Type="varchar" MaxLength="50" />
+          <Property Name="smtp_port" Type="int" />
+          <Property Name="smtp_username" Type="varchar" MaxLength="50" />
+          <Property Name="smtp_pass" Type="varchar(max)" />
+          <Property Name="smtp_mailtype" Type="varchar" MaxLength="50" />
+          <Property Name="smtp_charset" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_news">
+          <Key>
+            <PropertyRef Name="nid" />
+          </Key>
+          <Property Name="nid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="short_headline" Type="varchar(max)" />
+          <Property Name="headline" Type="varchar(max)" />
+          <Property Name="desc" Type="varchar(max)" />
+          <Property Name="ImageTitle" Type="varchar" MaxLength="50" />
+          <Property Name="ImagePath" Type="varchar(max)" />
+          <Property Name="Alttext" Type="varchar" MaxLength="50" />
+          <Property Name="categoryid" Type="int" />
+        </EntityType>
+        <EntityContainer Name="basicModelStoreContainer">
+          <EntitySet Name="app_setting" EntityType="Self.app_setting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contact_info" EntityType="Self.contact_info" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Email_setting" EntityType="Self.Email_setting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_news" EntityType="Self.tbl_news" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="basicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="categoryid" />
+          </Key>
+          <Property Name="categoryid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="categoryname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="basicEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="categories" EntityType="Self.category" />
+          <EntitySet Name="contact_info" EntityType="basicModel.contact_info" />
+          <EntitySet Name="Email_setting" EntityType="basicModel.Email_setting" />
+          <EntitySet Name="app_setting" EntityType="basicModel.app_setting" />
+          <EntitySet Name="tbl_news" EntityType="basicModel.tbl_news" />
+        </EntityContainer>
+        <EntityType Name="contact_info">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="phn_one" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="phn_two" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="website_link" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Email_setting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="smtp_protocol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="smtp_host" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="smtp_port" Type="Int32" />
+          <Property Name="smtp_username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="smtp_pass" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="smtp_mailtype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="smtp_charset" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="app_setting">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="websitetitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="websitelogopath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="footerlogopath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="faviconpath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="applogopath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mblmenupath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="webfooter" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="copyright" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_news">
+          <Key>
+            <PropertyRef Name="nid" />
+          </Key>
+          <Property Name="nid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="short_headline" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="headline" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ImageTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Alttext" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="categoryid" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="basicModelStoreContainer" CdmEntityContainer="basicEntities">
+          <EntitySetMapping Name="categories">
+            <EntityTypeMapping TypeName="basicModel.category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+                <ScalarProperty Name="categoryname" ColumnName="categoryname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contact_info">
+            <EntityTypeMapping TypeName="basicModel.contact_info">
+              <MappingFragment StoreEntitySet="contact_info">
+                <ScalarProperty Name="website_link" ColumnName="website_link" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phn_two" ColumnName="phn_two" />
+                <ScalarProperty Name="phn_one" ColumnName="phn_one" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Email_setting">
+            <EntityTypeMapping TypeName="basicModel.Email_setting">
+              <MappingFragment StoreEntitySet="Email_setting">
+                <ScalarProperty Name="smtp_charset" ColumnName="smtp_charset" />
+                <ScalarProperty Name="smtp_mailtype" ColumnName="smtp_mailtype" />
+                <ScalarProperty Name="smtp_pass" ColumnName="smtp_pass" />
+                <ScalarProperty Name="smtp_username" ColumnName="smtp_username" />
+                <ScalarProperty Name="smtp_port" ColumnName="smtp_port" />
+                <ScalarProperty Name="smtp_host" ColumnName="smtp_host" />
+                <ScalarProperty Name="smtp_protocol" ColumnName="smtp_protocol" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="app_setting">
+            <EntityTypeMapping TypeName="basicModel.app_setting">
+              <MappingFragment StoreEntitySet="app_setting">
+                <ScalarProperty Name="copyright" ColumnName="copyright" />
+                <ScalarProperty Name="webfooter" ColumnName="webfooter" />
+                <ScalarProperty Name="mblmenupath" ColumnName="mblmenupath" />
+                <ScalarProperty Name="applogopath" ColumnName="applogopath" />
+                <ScalarProperty Name="faviconpath" ColumnName="faviconpath" />
+                <ScalarProperty Name="footerlogopath" ColumnName="footerlogopath" />
+                <ScalarProperty Name="websitelogopath" ColumnName="websitelogopath" />
+                <ScalarProperty Name="websitetitle" ColumnName="websitetitle" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_news">
+            <EntityTypeMapping TypeName="basicModel.tbl_news">
+              <MappingFragment StoreEntitySet="tbl_news">
+                <ScalarProperty Name="categoryid" ColumnName="categoryid" />
+                <ScalarProperty Name="Alttext" ColumnName="Alttext" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="ImageTitle" ColumnName="ImageTitle" />
+                <ScalarProperty Name="desc" ColumnName="desc" />
+                <ScalarProperty Name="headline" ColumnName="headline" />
+                <ScalarProperty Name="short_headline" ColumnName="short_headline" />
+                <ScalarProperty Name="nid" ColumnName="nid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

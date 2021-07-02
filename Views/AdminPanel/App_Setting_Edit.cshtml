@@ -1,0 +1,278 @@
+﻿@model NewsPaperProject.Models.app_setting
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="~/css/apps.css" rel="stylesheet" />
+</head>
+<body>
+    @using (@Html.BeginForm("App_Setting_Edit", "AdminPanel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="container">
+            <h3 class="text-center">App Setting</h3>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.id)
+            <div class="row mt-5">
+                <div class="col">
+                    <h5>Website title</h5>
+                </div>
+                <div class="col">
+                    @Html.EditorFor(model => model.websitetitle, new { htmlAttributes = new { @class = "form-control", @id = "exampleInputEmail1" } })
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <h5>Logo Preview</h5>
+                </div>
+                <div class="col">
+                    @*<div class="form-group">
+                        <img src="@Url.Content(Model.websitelogopath)" height="50" width="50" />
+                    </div>*@
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <h5>WebSite Logo</h5>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text ">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                @Html.HiddenFor(model => model.websitelogopath)
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" name="ImageFile" />
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <h5>Logo Preview</h5>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <img src="#">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <h5>WebSite Logo</h5>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text ">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                @Html.HiddenFor(model => model.footerlogopath)
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" name="ImageFile1" />
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <h5>Logo Preview</h5>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <img src="#">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <h5>WebSite Logo</h5>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text ">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                @Html.HiddenFor(model => model.faviconpath)
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" name="ImageFile2" />
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <h5>Logo Preview</h5>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <img src="#">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <h5>WebSite Logo</h5>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text ">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                @Html.HiddenFor(model => model.applogopath)
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" name="ImageFile3" />
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <h5>Logo Preview</h5>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <img src="#">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <h5>WebSite Logo</h5>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text ">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                @Html.HiddenFor(model => model.mblmenupath)
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" name="ImageFile4" />
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col">
+                    <h5>Website Footer</h5>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.webfooter, new { htmlAttributes = new { @class = "form-control", @id = "exampleInputEmail1" } })
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <h5>Website Footer</h5>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        @Html.EditorFor(model => model.copyright, new { htmlAttributes = new { @class = "form-control", @id = "exampleInputEmail1" } })
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <h5>Website Footer</h5>
+                </div>
+                <div class="col">
+                    @*<div class="form-group">
+                        @Html.EditorFor(model => model.Website_Time_Zone, new { htmlAttributes = new { @class = "form-control", @id = "exampleInputEmail1" } })
+                    </div>*@
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <h5>Website Footer</h5>
+                </div>
+                <div class="col">
+                    @*<div class="form-group">
+                        @Html.EditorFor(model => model.News_ticker_Status, new { htmlAttributes = new { @class = "form-control", @id = "exampleInputEmail1" } })
+                    </div>*@
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <h5>Website Footer</h5>
+                </div>
+                <div class="col">
+                    @*<div class="form-group">
+                        @Html.EditorFor(model => model.Preloader_Status, new { htmlAttributes = new { @class = "form-control", @id = "exampleInputEmail1" } })
+                    </div>*@
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <h5>Website Footer</h5>
+                </div>
+                <div class="col">
+                    @*<div class="form-group">
+                        @Html.EditorFor(model => model.Ltl_Rtl_Status, new { htmlAttributes = new { @class = "form-control", @id = "exampleInputEmail1" } })
+                    </div>*@
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <h5>Website Footer</h5>
+                </div>
+                <div class="col">
+                    @*<div class="form-group">
+                        @Html.EditorFor(model => model.Speed_Optimization, new { htmlAttributes = new { @class = "form-control", @id = "exampleInputEmail1" } })
+                    </div>*@
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10" style="position:center">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</body>
+</html>

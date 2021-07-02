@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="basicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="app_setting">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="websitetitle" Type="varchar" MaxLength="50" />
+    <Property Name="websitelogopath" Type="varchar(max)" />
+    <Property Name="footerlogopath" Type="varchar(max)" />
+    <Property Name="faviconpath" Type="varchar(max)" />
+    <Property Name="applogopath" Type="varchar(max)" />
+    <Property Name="mblmenupath" Type="varchar(max)" />
+    <Property Name="webfooter" Type="varchar(max)" />
+    <Property Name="copyright" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="category">
+    <Key>
+      <PropertyRef Name="categoryid" />
+    </Key>
+    <Property Name="categoryid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="categoryname" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="contact_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="varchar(max)" />
+    <Property Name="address" Type="varchar(max)" />
+    <Property Name="phn_one" Type="varchar" MaxLength="20" />
+    <Property Name="phn_two" Type="varchar" MaxLength="20" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="website_link" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Email_setting">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="smtp_protocol" Type="varchar" MaxLength="50" />
+    <Property Name="smtp_host" Type="varchar" MaxLength="50" />
+    <Property Name="smtp_port" Type="int" />
+    <Property Name="smtp_username" Type="varchar" MaxLength="50" />
+    <Property Name="smtp_pass" Type="varchar(max)" />
+    <Property Name="smtp_mailtype" Type="varchar" MaxLength="50" />
+    <Property Name="smtp_charset" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_news">
+    <Key>
+      <PropertyRef Name="nid" />
+    </Key>
+    <Property Name="nid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="short_headline" Type="varchar(max)" />
+    <Property Name="headline" Type="varchar(max)" />
+    <Property Name="desc" Type="varchar(max)" />
+    <Property Name="ImageTitle" Type="varchar" MaxLength="50" />
+    <Property Name="ImagePath" Type="varchar(max)" />
+    <Property Name="Alttext" Type="varchar" MaxLength="50" />
+    <Property Name="categoryid" Type="int" />
+  </EntityType>
+  <EntityContainer Name="basicModelStoreContainer">
+    <EntitySet Name="app_setting" EntityType="Self.app_setting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="category" EntityType="Self.category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contact_info" EntityType="Self.contact_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Email_setting" EntityType="Self.Email_setting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_news" EntityType="Self.tbl_news" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
