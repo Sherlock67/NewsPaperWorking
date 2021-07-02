@@ -1,0 +1,251 @@
+﻿@using NewsPaperProject.Models
+@model ViewModel
+@{
+    Layout = null;
+}
+<!Doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/css/home.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-bar">
+            <ul class="exo-menu">
+                @foreach (var item in Model.allcategory)
+                {
+    <li>
+        <a class="active" href="#">
+            <i class="fa fa-home"></i>
+            @Html.DisplayFor(x => item.categoryname)
+        </a>
+    </li>}
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-4" id="sector_one">
+                <div class="card" id="top_news_box">
+                    @foreach (var item in Model.allnews)
+                    {
+                    <img src="@Url.Content(item.ImagePath)" width="350" height="350" class="card-img-top" alt="..." />
+                       
+                    <div >
+                        <a href="#" > @Html.DisplayFor(x => item.desc) </a>
+                    </div>
+                        
+                    }
+                </div>
+                    
+                @*<div className="box_two_sector_one">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card" id="second_news_box">
+                                <img src="~/pic/demo_two.jpg" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" id="second_news_box_two">
+                                <img src="~/pic/demo_three.jpg" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card" id="second_news_box_three">
+                                <img src="~/pic/demo_eight.jpg" class="card-img-top" alt="..." />
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+                @*<div class="card" id="sector_one_card">
+                    <img src="~/pic/add_four.gif" class="card-img-top" alt="..." id="sector_one_img" />
+                </div>*@
+            </div>
+            @*<div class="col-4" id="sector_two">
+                <div class="card" id="sector_two_latestnews">
+                    <div class="card-body">
+
+                        <a href="#">
+                            <img src="~/pic/demo_two.jpg" id="latest_news_img" />
+                        </a>
+                        <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                        <br />
+                        <hr />
+                        <a href="#">
+                            <img src="~/pic/demo_four.jpeg" id="latest_news_img" />
+                        </a>
+                        <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                        <br />
+                        <hr />
+                        <a href="#">
+                            <img src="~/pic/demo_six.jpg" id="latest_news_img" />
+                        </a>
+                        <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                        <br />
+                        <hr />
+                        <a href="#">
+                            <img src="~/pic/demo_ten.jpg" id="latest_news_img" />
+                        </a>
+                        <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                        <br />
+                        <hr />
+                        <a href="#">
+                            <img src="~/pic/demo_three.jpg" id="latest_news_img" />
+                        </a>
+                        <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                        <br />
+                        <hr />
+                        <a href="#">
+                            <img src="~/pic/demo_two.jpg" id="latest_news_img" />
+                        </a>
+                        <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                        <br />
+                        <hr />
+                        <a href="#">
+                            <img src="~/pic/demo_four.jpeg" id="latest_news_img" />
+                        </a>
+                        <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                        <br />
+                        <hr />
+                        <a href="#">
+                            <img src="~/pic/demo_four.jpeg" id="latest_news_img" />
+                        </a>
+                        <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                        <br />
+
+
+                        <a href="#" class="card-link" id="sector_two_heading"></a>
+                    </div>
+                </div>
+                <div class="card" id="sector_two_middlecard">
+                    <img src="~/pic/demo_eight.jpg" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>*@
+            @*<div class="col-4" id="sector_three">
+            <div class="card" id="sector_three_add">
+                <div class="card-body">
+
+                    <a href="#">
+                        <img src="~/pic/add_one.gif" id="add_img" />
+                    </a>
+
+                    <br />
+                    <hr />
+                    <a href="#">
+                        <img src="~/pic/add_two.gif" id="add_img" />
+                    </a>
+
+                    <br />
+                    <hr />
+                    <a href="#">
+                        <img src="~/pic/add_three.gif" id="add_img" />
+                    </a>
+
+                    <br />
+                    <hr />
+                    <a href="#">
+                        <img src="~/pic/add_one.gif" id="add_img" />
+                    </a>
+                    <a href="#" class="card-link" id="sector_two_heading"></a>
+                </div>
+            </div>*@
+            @*<div class="card" id="sector_three_news">
+                <div class="card-body">
+
+                    <a href="#">
+                        <img src="~/pic/demo_two.jpg" id="latest_news_img" />
+                    </a>
+                    <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                    <br />
+                    <hr />
+                    <a href="#">
+                        <img src="~/pic/demo_three.jpg" id="latest_news_img" />
+                    </a>
+                    <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                    <br />
+                    <hr />
+                    <a href="#">
+                        <img src="~/pic/demo_four.jpeg" id="latest_news_img" />
+                    </a>
+                    <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                    <br />
+                    <hr />
+                    <a href="#">
+                        <img src="~/pic/demo_two.jpg" id="latest_news_img" />
+                    </a>
+                    <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                    <br />
+                    <hr />
+                    <a href="#">
+                        <img src="~/pic/demo_two.jpg" id="latest_news_img" />
+                    </a>
+                    <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                    <br />
+                    <hr />
+                    <a href="#">
+                        <img src="~/pic/demo_two.jpg" id="latest_news_img" />
+                    </a>
+                    <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                    <br />
+                    <hr />
+                    <a href="#">
+                        <img src="~/pic/demo_two.jpg" id="latest_news_img" />
+                    </a>
+                    <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                    <br />
+                    <hr />
+                    <a href="#">
+                        <img src="~/pic/demo_two.jpg" id="latest_news_img" />
+                    </a>
+                    <p id="latest_news_write">dasdasdasdasdasdasdadasdasdasdafdfaawwfafsdawdawfawfawfafsafawaawdwafafwfrwdeadwadwadafewgfaw</p>
+                    <br />
+
+
+                    <a href="#" class="card-link" id="sector_two_heading"></a>
+                </div>
+            </div>*@
+
+        </div>
+
+    </div>
+
+    @*</div>*@
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+
+        $(function () {
+            $('.toggle-menu').click(function () {
+                $('.exo-menu').toggleClass('display');
+            });
+
+        });
+    </script>
+
+
+</body>
+</html>
