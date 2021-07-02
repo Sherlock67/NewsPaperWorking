@@ -1,0 +1,21 @@
+#pic
+{
+    height: 4rem;
+    width: 7.5rem;
+}
+#btn
+{
+    height: 1.5rem;
+    width: 3rem;
+    position: relative;
+    right: 2rem;
+
+   
+}
+#btn_edit
+{
+    height: 1.5rem;
+    width: 3rem;
+    position: relative;
+   
+}
